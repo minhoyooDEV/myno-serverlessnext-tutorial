@@ -9,10 +9,10 @@ phases:
 
   pre_build:
     commands:
-      - aws s3 sync s3://myno-nextserverless/${CURRENT_ENVIRONMENT}/.serverless .serverless --delete
+      - aws s3 sync s3://myno-nextserverless/.serverless .serverless --delete
       # - npm run test-cicd
 
   build:
     commands:
       - serverless
-      - aws s3 sync .serverless s3://myno-nextserverless/${CURRENT_ENVIRONMENT}/.serverless --delete
+      - aws s3 sync .serverless s3://myno-nextserverless/.serverless --delete

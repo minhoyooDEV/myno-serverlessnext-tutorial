@@ -2,5 +2,8 @@
 
 myNextApplication:
   component: "@sls-next/serverless-component@latest" # it is recommended you pin the latest stable version of serverless-next.js
-    inputs:
-      enableS3Acceleration: false
+  inputs:
+    bucketRegion: ap-northeast-2
+    region: ap-northeast-2
+    runtime: nodejs14.x
+    enableS3Acceleration: false

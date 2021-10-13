@@ -1,0 +1,31 @@
+{
+  "name": "ewr4voi-bty81s",
+  "arn": "arn:aws:iam::768524597925:role/ewr4voi-bty81s",
+  "service": [
+    "edgelambda.amazonaws.com",
+    "lambda.amazonaws.com"
+  ],
+  "policy": {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Resource": "*",
+        "Action": [
+          "logs:CreateLogGroup",
+          "logs:CreateLogStream",
+          "logs:PutLogEvents"
+        ]
+      },
+      {
+        "Effect": "Allow",
+        "Resource": "arn:aws:s3:::ewr4voi-w0sn3cd/*",
+        "Action": [
+          "s3:GetObject",
+          "s3:PutObject"
+        ]
+      }
+    ]
+  },
+  "region": "us-east-1"
+}

@@ -5,14 +5,14 @@ phases:
     commands:
       - echo CURRENT_ENVIRONMENT=${CURRENT_ENVIRONMENT}
       - npm install -g serverless
-      - npm install
+      - yarn
 
-  pre_build:
-    commands:
-      - aws s3 sync s3://myno-nextserverless/.serverless .serverless --delete
-      # - npm run test-cicd
+  # pre_build:
+  # commands:
+  # - aws s3 sync s3://myno-nextserverless/.serverless .serverless --delete
+  # - npm run test-cicd
 
   build:
     commands:
       - serverless
-      - aws s3 sync .serverless s3://myno-nextserverless/.serverless --delete
+      # - aws s3 sync .serverless s3://myno-nextserverless/.serverless --delete

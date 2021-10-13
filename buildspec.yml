@@ -14,5 +14,5 @@ phases:
 
   build:
     commands:
-      - serverless
+      - serverless --debug
       # - aws s3 sync .serverless s3://myno-nextserverless/.serverless --delete

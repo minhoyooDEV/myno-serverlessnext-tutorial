@@ -15,3 +15,5 @@
 3. `serverless`
   * generate severless directories...
   * .serverless and .serverless_nextjs
+
+4. add `buildspec.yml`

@@ -1,0 +1,18 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo CURRENT_ENVIRONMENT=${CURRENT_ENVIRONMENT}
+      - npm install -g serverless
+      - npm install
+
+  pre_build:
+    commands:
+      - aws s3 sync s3://myno-nextserverless/${CURRENT_ENVIRONMENT}/.serverless .serverless --delete
+      # - npm run test-cicd
+
+  build:
+    commands:
+      - serverless
+      - aws s3 sync .serverless s3://myno-nextserverless/${CURRENT_ENVIRONMENT}/.serverless --delete
